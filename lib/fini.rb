@@ -1,17 +1,9 @@
-require "fini/version"
+require_relative "fini/version"
 
 module Fini
 
-    # Class to parse ini files quickly, no writing functionality.
+    # Instance class for accessing Fini functionality
     #
-    # Sections marked with [section], equal sign for name=value. Optional double quotation marks "" for string values.
-    # Fully numeric strings will be converted to integers and floats unless quoted. Literal "true" and "false" will
-    # be converted to boolean.
-    #
-    # Sections can also have sub-sections by appending the sub-section's name to the section with a period, eg:
-    # [section.subsection]
-    #
-    # Subsections will be hashes in the section with the sub-section name as the key.
     class Ini
         def parse content
             Fini.parse content
@@ -123,6 +115,7 @@ module Fini
         end
 
         # @param [Symbol] key
+        # @return [Hash]
         def create_section key
             data = @data[key] = {}
             method = Proc.new do |k = nil, default = nil|
