@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
     gem.email         = ["mikael@arvola.com"]
     gem.description   = %q{Fini is an ini-parser optimized for performance.}
     gem.summary       = %q{Fast ini parser}
-    gem.homepage      = ""
+    gem.homepage      = "https://github.com/arvola/fini"
 
     gem.files         = `git ls-files`.split($/)
     gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
